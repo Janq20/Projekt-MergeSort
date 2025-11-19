@@ -16,5 +16,18 @@ void wypiszTablice(const vector<T>& tablica) {
 int main() {
     cout << "=== PROJEKT: MERGE SORT ===" << endl;
 
+    // --- CZESC 1: Liczby Calkowite (INT) ---
+    cout << "\n1. Testowanie dla typu INT:" << endl;
+    vector<int> liczbyInt = { 38, 27, 43, 3, 9, 82, 10 };
+    Sortowanie<int> sorterInt;
+
+    cout << "Przed sortowaniem: ";
+    wypiszTablice(liczbyInt);
+
+    sorterInt.sortuj(liczbyInt);
+
+    cout << "Po sortowaniu:     ";
+    wypiszTablice(liczbyInt);
+
     return 0;
 }
