@@ -1,10 +1,20 @@
 ﻿#include <iostream>
 #include <vector>
-#include "Sortowanie.h" 
+#include "Sortowanie.h"
 
 using namespace std;
 
+// Funkcja pomocnicza do wyswietlania zawartosci wektora
+template <typename T>
+void wypiszTablice(const vector<T>& tablica) {
+    for (const auto& element : tablica) {
+        cout << element << " ";
+    }
+    cout << endl;
+}
+
 int main() {
-    cout << "Projekt: Sortowanie przez Scalanie (MergeSort)" << endl;
+    cout << "=== PROJEKT: MERGE SORT ===" << endl;
+
     return 0;
 }
