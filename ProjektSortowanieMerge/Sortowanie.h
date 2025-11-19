@@ -1,3 +1,4 @@
+// Wersja stabilna algorytmu MergeSort
 #pragma once
 #include <vector>
 #include <iostream>
