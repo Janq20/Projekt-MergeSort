@@ -13,7 +13,19 @@ public:
     }
 
 private:
+    // Logika rekurencyjna
     void sortujRekurencyjnie(std::vector<T>& tablica, int lewy, int prawy) {
+        if (lewy < prawy) {
+            // Dzielenie 
+            int srodek = lewy + (prawy - lewy) / 2;
+
+            // Zwyciezanie
+            sortujRekurencyjnie(tablica, lewy, srodek);
+            sortujRekurencyjnie(tablica, srodek + 1, prawy);
+
+            // Scalanie 
+            scalaj(tablica, lewy, srodek, prawy);
+        }
     }
     void scalaj(std::vector<T>& tablica, int lewy, int srodek, int prawy) {
         int n1 = srodek - lewy + 1;
