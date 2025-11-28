@@ -104,10 +104,24 @@ TEST(TestySortowania, DuzaTablica) {
     sorter.sortuj(tablica);
 
     EXPECT_EQ(tablica.size(), 105);
-    EXPECT_EQ(tablica[0], 1);     // Pierwszy element to 1
-    EXPECT_EQ(tablica[104], 105); // Ostatni element to 105
+    EXPECT_EQ(tablica[0], 1);     
+    EXPECT_EQ(tablica[104], 105); 
+    for (size_t i = 0; i < tablica.size() - 1; ++i) {
+        EXPECT_LE(tablica[i], tablica[i + 1]);
+    }
+}
+// 13. Duża tablica (>100 el) z liczbami ujemnymi, dodatnimi oraz duplikatami
+TEST(TestySortowania, DuzaTablicaMieszanaZDuplikatami) {
+    std::vector<int> tablica;
+    for (int i = 0; i < 50; i++) tablica.push_back(i);
+    for (int i = 0; i < 50; i++) tablica.push_back(-i);
+    tablica.push_back(0);
+    tablica.push_back(5);
 
-    // Dodatkowa pętla sprawdzająca posortowanie
+    Sortowanie<int> sorter;
+    sorter.sortuj(tablica);
+
+    EXPECT_GT(tablica.size(), 100);
     for (size_t i = 0; i < tablica.size() - 1; ++i) {
         EXPECT_LE(tablica[i], tablica[i + 1]);
     }
