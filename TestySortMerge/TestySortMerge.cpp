@@ -4,9 +4,10 @@
 
 using namespace std;
 
-TEST(TestySortowania, SortujeOdwrotnaKolejnosc) {
-    std::vector<int> tablica = { 5, 4, 3, 2, 1 };
-    std::vector<int> oczekiwana = { 1, 2, 3, 4, 5 };
+// 3. Sprawdzenie sortowania losowej listy
+TEST(TestySortowania, SortujeLosowaTablice) {
+    std::vector<int> tablica = { 12, 7, 14, 9, 10, 11 };
+    std::vector<int> oczekiwana = { 7, 9, 10, 11, 12, 14 };
     Sortowanie<int> sorter;
     sorter.sortuj(tablica);
     EXPECT_EQ(tablica, oczekiwana);
