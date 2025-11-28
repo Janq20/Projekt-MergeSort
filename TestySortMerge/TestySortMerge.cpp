@@ -85,6 +85,14 @@ TEST(TestySortowania, MieszaneZDuplikatami) {
     sorter.sortuj(tablica);
     EXPECT_EQ(tablica, oczekiwana);
 }
+// 11. Sortowanie tablicy zawierającej tylko dwa elementy w kolejności rosnącej
+TEST(TestySortowania, DwaElementyRosnaco) {
+    std::vector<int> tablica = { 10, 20 };
+    std::vector<int> oczekiwana = { 10, 20 };
+    Sortowanie<int> sorter;
+    sorter.sortuj(tablica);
+    EXPECT_EQ(tablica, oczekiwana);
+}
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
