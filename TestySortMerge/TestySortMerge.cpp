@@ -61,6 +61,14 @@ TEST(TestySortowania, JedenElement) {
     sorter.sortuj(tablica);
     EXPECT_EQ(tablica, oczekiwana);
 }
+// 8. Sortowanie tablicy z duplikatami liczb
+TEST(TestySortowania, ObslugaDuplikatow) {
+    std::vector<int> tablica = { 5, 1, 5, 3, 1 };
+    std::vector<int> oczekiwana = { 1, 1, 3, 5, 5 };
+    Sortowanie<int> sorter;
+    sorter.sortuj(tablica);
+    EXPECT_EQ(tablica, oczekiwana);
+}
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
