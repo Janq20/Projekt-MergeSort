@@ -4,10 +4,10 @@
 
 using namespace std;
 
-// 4. Poprawnie sortuje tablicę tylko z liczbami ujemnymi
-TEST(TestySortowania, SortujeTylkoUjemne) {
-    std::vector<int> tablica = { -10, -2, -30, -5 };
-    std::vector<int> oczekiwana = { -30, -10, -5, -2 };
+// 5. Poprawnie sortuje tablice z liczbami ujemnymi i dodatnimi
+TEST(TestySortowania, SortujeMieszaneUjemneIDodatnie) {
+    std::vector<int> tablica = { -5, 2, -1, 0, 10 };
+    std::vector<int> oczekiwana = { -5, -1, 0, 2, 10 };
     Sortowanie<int> sorter;
     sorter.sortuj(tablica);
     EXPECT_EQ(tablica, oczekiwana);
