@@ -53,6 +53,14 @@ TEST(TestySortowania, ObslugaPustejTablicy) {
     ASSERT_NO_THROW(sorter.sortuj(tablica));
     EXPECT_EQ(tablica, oczekiwana);
 }
+// 7. Nie zmienia tablicy, która zawiera tylko jeden element
+TEST(TestySortowania, JedenElement) {
+    std::vector<int> tablica = { 42 };
+    std::vector<int> oczekiwana = { 42 };
+    Sortowanie<int> sorter;
+    sorter.sortuj(tablica);
+    EXPECT_EQ(tablica, oczekiwana);
+}
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
