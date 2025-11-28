@@ -77,6 +77,14 @@ TEST(TestySortowania, UjemneZDuplikatami) {
     sorter.sortuj(tablica);
     EXPECT_EQ(tablica, oczekiwana);
 }
+// 10. Sortowanie tablicy z liczbami ujemnymi, dodatnimi oraz duplikatami
+TEST(TestySortowania, MieszaneZDuplikatami) {
+    std::vector<int> tablica = { -2, 2, 0, -2, 5, 5 };
+    std::vector<int> oczekiwana = { -2, -2, 0, 2, 5, 5 };
+    Sortowanie<int> sorter;
+    sorter.sortuj(tablica);
+    EXPECT_EQ(tablica, oczekiwana);
+}
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
