@@ -93,6 +93,25 @@ TEST(TestySortowania, DwaElementyRosnaco) {
     sorter.sortuj(tablica);
     EXPECT_EQ(tablica, oczekiwana);
 }
+// 12. Sortowanie dużej tablicy zawierającej ponad 100 elementów
+TEST(TestySortowania, DuzaTablica) {
+    std::vector<int> tablica;
+    for (int i = 105; i > 0; i--) {
+        tablica.push_back(i);
+    }
+
+    Sortowanie<int> sorter;
+    sorter.sortuj(tablica);
+
+    EXPECT_EQ(tablica.size(), 105);
+    EXPECT_EQ(tablica[0], 1);     // Pierwszy element to 1
+    EXPECT_EQ(tablica[104], 105); // Ostatni element to 105
+
+    // Dodatkowa pętla sprawdzająca posortowanie
+    for (size_t i = 0; i < tablica.size() - 1; ++i) {
+        EXPECT_LE(tablica[i], tablica[i + 1]);
+    }
+}
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
