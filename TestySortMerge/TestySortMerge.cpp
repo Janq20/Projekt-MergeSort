@@ -4,8 +4,8 @@
 
 using namespace std;
 
-TEST(TestySortowania, ZachowujePosortowana) {
-    std::vector<int> tablica = { 1, 2, 3, 4, 5 };
+TEST(TestySortowania, SortujeOdwrotnaKolejnosc) {
+    std::vector<int> tablica = { 5, 4, 3, 2, 1 };
     std::vector<int> oczekiwana = { 1, 2, 3, 4, 5 };
     Sortowanie<int> sorter;
     sorter.sortuj(tablica);
