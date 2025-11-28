@@ -69,6 +69,14 @@ TEST(TestySortowania, ObslugaDuplikatow) {
     sorter.sortuj(tablica);
     EXPECT_EQ(tablica, oczekiwana);
 }
+// 9. Sortowanie tablicy ujemną z duplikatami
+TEST(TestySortowania, UjemneZDuplikatami) {
+    std::vector<int> tablica = { -5, -1, -5, -3, -1 };
+    std::vector<int> oczekiwana = { -5, -5, -3, -1, -1 };
+    Sortowanie<int> sorter;
+    sorter.sortuj(tablica);
+    EXPECT_EQ(tablica, oczekiwana);
+}
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
